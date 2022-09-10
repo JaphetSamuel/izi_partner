@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'patner' => [
+            'driver'=> 'session',
+            'provider' => 'patner'
+        ]
     ],
 
     /*
@@ -64,6 +69,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'patner' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Patner::class
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
