@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\scope\PatnerScope;
+use App\scope\DriverScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +54,7 @@ class Driver extends Model
 
     protected static function booted(){
 
-        static::addGlobalScope(new PatnerScope());
+        static::addGlobalScope(new DriverScope());
 
     }
 

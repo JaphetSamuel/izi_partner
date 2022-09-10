@@ -18,7 +18,7 @@ class DriverResource extends Resource
     protected static ?string $model = Driver::class;
 
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-user';
 
     public static function form(Form $form): Form
     {
@@ -43,12 +43,15 @@ class DriverResource extends Resource
                 Forms\Components\TextInput::make('password')
                     ->dehydrateStateUsing(fn($state)=>password_hash($state, PASSWORD_ARGON2ID,[ 'time_cost' => 1, 'threads' => 2]))
                 ->label("Mot de passe")
-                ->password(),
+                ->password()
+                ->visibleOn(["edit"]),
 
                 Forms\Components\FileUpload::make('picture')
                 ->label("Photo"),
 
-                Forms\Components\Toggle::make('is_enabled'),
+                Forms\Components\Toggle::make('is_enabled')
+                ->label("activé")
+                ->visibleOn(["view"]),
                 Forms\Components\TextInput::make('car_brand')
                 ->label("Marque du Véhicule"),
 
@@ -67,7 +70,6 @@ class DriverResource extends Resource
                     ->label("Carte Grise"),
                 Forms\Components\FileUpload::make('insurance_card')
                     ->label("Assurance"),
-                Forms\Components\TextInput::make('patner_id'),
             ]);
     }
 
