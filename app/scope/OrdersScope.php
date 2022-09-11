@@ -13,6 +13,6 @@ class OrdersScope implements \Illuminate\Database\Eloquent\Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where("")
+
     }
 }

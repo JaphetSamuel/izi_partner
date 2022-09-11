@@ -16,4 +16,8 @@ class Order extends Model
     {
         static::addGlobalScope(new OrdersScope());
     }
+
+    public function driver(){
+        $this->hasOne(Driver::class,'driver_id');
+    }
 }

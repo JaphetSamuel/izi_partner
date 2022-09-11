@@ -19,4 +19,11 @@ class ListDrivers extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            DriverResource\Widgets\onlineDriver::class
+        ];
+    }
 }
