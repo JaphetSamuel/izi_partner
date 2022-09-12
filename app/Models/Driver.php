@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\scope\DriverScope;
+use Carbon\Traits\Date;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +31,7 @@ class Driver extends Model
     ];
 
     public function orders(){
-        return $this->hasMany(Orders::class);
+        return $this->hasMany(Order::class);
     }
 
     public function enable(){
@@ -39,7 +40,7 @@ class Driver extends Model
     }
 
     public function subscriptions(){
-        return $this->hasMany(Subscriptions::class, 'driver_id');
+        return $this->hasMany(Subscription::class, 'driver_id');
     }
 
     public function fullname():Attribute
@@ -50,6 +51,10 @@ class Driver extends Model
     public function getCarLicenceUrl()
     {
         return Storage::cloud()->temporaryUrl($this->car_licence, now()->addMinutes(5));
+    }
+
+    public function activeSubscription(): null|Model {
+        return $this->subscriptions()->get()->firstWhere("isActive", true);
     }
 
     protected static function booted(){
