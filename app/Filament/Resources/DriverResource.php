@@ -46,6 +46,7 @@ class DriverResource extends Resource
                     ->dehydrateStateUsing(fn($state)=>password_hash($state, PASSWORD_ARGON2ID,[ 'time_cost' => 1, 'threads' => 2]))
                 ->label("Mot de passe")
                 ->password()
+                    ->required()
                 ->visibleOn(["edit"]),
 
                 Forms\Components\FileUpload::make('picture')
