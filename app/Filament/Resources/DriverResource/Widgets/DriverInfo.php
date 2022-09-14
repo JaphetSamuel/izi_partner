@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DriverInfo extends Widget
 {
-    protected int | string | array $columnSpan = 2;
+    protected int | string | array $columnSpan = 1;
 
     protected static string $view = 'filament.resources.driver-resource.widgets.driver-info';
 

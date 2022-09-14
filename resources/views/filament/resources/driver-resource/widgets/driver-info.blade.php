@@ -1,24 +1,18 @@
 <x-filament::widget>
     <x-filament::card>
-        <table border="none" >
-            <thead>
-                <th></th>
-                <th></th>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Nom : <b>{{$record->firstname}}</b> </td>
-                <td>Marque: <b>{{$record->car_brand}}</b> </td>
-            </tr>
-            <tr>
-                <td>Prenom : <b>{{$record->lastname}}</b> </td>
-                <td>Model : <b>{{$record->car_model}}</b> </td>
-            </tr>
-            <tr>
-                <td>Contact : <b>{{$record->phone}}</b> </td>
-                <td>Immatriculation: <b>{{$record->immatriculation}}</b> </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="flex ">
+
+            <div class="">
+                <h3 class="p-3">Nom : <b>{{$record->firstname}}</b> </h3>
+                <h3 class="p-3">Prenom : <b>{{$record->lastname}}</b> </h3>
+                <h3 class="p-3">Contact : <b>{{$record->phone}}</b> </h3>
+            </div>
+            <div class="pr-8">
+                <p class="p-3">Marque: <b>{{$record->car_brand}}</b> </p>
+                <p class="p-3">Model : <b>{{$record->car_model}}</b> </p>
+                <p class="p-3">Immatriculation: <b>{{$record->immatriculation}}</b> </p>
+            </div>
+
+        </div>
     </x-filament::card>
 </x-filament::widget>
