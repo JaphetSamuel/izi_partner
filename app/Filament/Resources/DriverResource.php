@@ -22,6 +22,11 @@ class DriverResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
+    protected static function getNavigationBadge(): ?string
+    {
+        return Driver::query()->count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form

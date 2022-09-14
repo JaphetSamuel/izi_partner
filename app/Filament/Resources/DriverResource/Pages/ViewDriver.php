@@ -21,4 +21,11 @@ class ViewDriver extends ViewRecord
             ->label("Acheter un pack ")
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            DriverResource\Widgets\DriverInfo::class
+        ];
+    }
 }

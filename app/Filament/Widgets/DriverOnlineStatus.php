@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Builder;
 
 class DriverOnlineStatus extends BaseWidget
 {
+
+    protected static ?string $heading = "Statut des Conducteurs";
+
     protected function getTablePollingInterval(): ?string
     {
         return "5s";
