@@ -25,7 +25,8 @@ class ViewDriver extends ViewRecord
     protected function getHeaderWidgets(): array
     {
         return [
-            DriverResource\Widgets\DriverInfo::class
+            DriverResource\Widgets\DriverInfo::class,
+            DriverResource\Widgets\DriverPackPresentation::class
         ];
     }
 }
