@@ -13,5 +13,5 @@ jobs:
         with:
           server: ${{secrets.FTP_HOST}}
           username: ${{secrets.FTP_USERNAME}}
-          password: ${{ secrets.ftp_PASSWORD }}
+          password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/partenaire/izi_partner
