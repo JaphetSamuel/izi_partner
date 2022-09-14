@@ -37,7 +37,7 @@ class DriverOnlineStatus extends BaseWidget
                     "danger"=>0,
                     "success"=>1
                 ])
-            ->label('Statut')
+            ->label('Statut ')
             ->sortable(),
         ];
     }
