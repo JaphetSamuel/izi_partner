@@ -75,6 +75,8 @@ class DriverResource extends Resource
 
                 Forms\Components\FileUpload::make('photos')
                     ->disk('minio')
+                    ->enableOpen()
+                    ->enableDownload()
                 ->label("photos du véhicule")
                 ->multiple(),
                 Forms\Components\FileUpload::make('gray_card')
@@ -82,6 +84,7 @@ class DriverResource extends Resource
                     ->label("Carte Grise"),
                 Forms\Components\FileUpload::make('insurance_card')
                     ->disk('minio')
+                    ->enableOpen()
                     ->label("Assurance"),
             ]);
     }
