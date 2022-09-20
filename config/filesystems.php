@@ -14,7 +14,7 @@ return [
     */
 
     'default' => env('FILESYSTEM_DISK', 'local'),
-
+    'cloud'=>'minio',
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -54,6 +54,16 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
+        ],
+        'minio' => [
+            'driver' => 's3',
+            'key' => env('MINIO_ACCESS_KEY','ROOT1234'),
+            'secret' => env('MINIO_SECRET_ACCESS_KEY','ROOT1234'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('MINIO_BUCKET','picture'),
+            'url' => env('MINIO_URL','144.91.70.164:9000'),
+            'endpoint' => env('MINIO_ENDPOINT','http://144.91.70.164:9000'),
+            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
     ],

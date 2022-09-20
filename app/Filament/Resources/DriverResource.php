@@ -55,6 +55,7 @@ class DriverResource extends Resource
                 ->visibleOn(["edit"]),
 
                 Forms\Components\FileUpload::make('picture')
+                    ->disk('minio')
                 ->label("Photo"),
 
                 Forms\Components\Toggle::make('is_enabled')
@@ -69,14 +70,18 @@ class DriverResource extends Resource
 
                 Forms\Components\TextInput::make('car_number'),
                 Forms\Components\FileUpload::make('car_licence')
+                    ->disk('mino')
                 ->label("Permis de conduire"),
 
                 Forms\Components\FileUpload::make('photos')
+                    ->disk('minio')
                 ->label("photos du véhicule")
                 ->multiple(),
                 Forms\Components\FileUpload::make('gray_card')
+                    ->disk('minio')
                     ->label("Carte Grise"),
                 Forms\Components\FileUpload::make('insurance_card')
+                    ->disk('minio')
                     ->label("Assurance"),
             ]);
     }
@@ -85,7 +90,7 @@ class DriverResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make(''),
+                Tables\Columns\ImageColumn::make('picture')->label('Photo')->disk('minio'),
                 Tables\Columns\TextColumn::make('fullname')
                     ->searchable(['firstname','lastname'])
                 ->label('Nom'),
