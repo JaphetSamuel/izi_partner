@@ -52,7 +52,7 @@ class DriverResource extends Resource
                 ->label("Mot de passe")
                 ->password()
                     ->required()
-                ->visibleOn(["edit"]),
+                ->visibleOn(["edit","create"]),
 
                 Forms\Components\FileUpload::make('picture')
                     ->disk('minio')
