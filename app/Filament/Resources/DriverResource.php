@@ -66,9 +66,9 @@ class DriverResource extends Resource
 
                 Forms\Components\TextInput::make('car_model')
                 ->label("Model du vehicule"),
-                Forms\Components\TextInput::make('immatriculation'),
+//                Forms\Components\TextInput::make('immatriculation'),
 
-                Forms\Components\TextInput::make('car_number'),
+                Forms\Components\TextInput::make('car_number')->label('Immatriculation'),
                 Forms\Components\FileUpload::make('car_licence')
                     ->disk('minio')
                 ->label("Permis de conduire"),
