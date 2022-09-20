@@ -70,7 +70,7 @@ class DriverResource extends Resource
 
                 Forms\Components\TextInput::make('car_number'),
                 Forms\Components\FileUpload::make('car_licence')
-                    ->disk('mino')
+                    ->disk('minio')
                 ->label("Permis de conduire"),
 
                 Forms\Components\FileUpload::make('photos')
