@@ -15,8 +15,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
-    'izigo' => env('IZIGO_DB_CONNECTION'),
+//    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('IZIGO_DB_CONNECTION'),
 
     /*
     |--------------------------------------------------------------------------

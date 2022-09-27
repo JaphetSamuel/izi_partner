@@ -44,6 +44,10 @@ return [
         'patner' => [
             'driver'=> 'session',
             'provider' => 'patner'
+        ],
+        'iziusers'=>[
+            'driver'=>'session',
+            'provider'=>'iziusers'
         ]
     ],
 
@@ -71,13 +75,13 @@ return [
         ],
         'patner' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Patner::class
-        ]
+            'model' => App\Models\Partner::class
+        ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'iziusers' => [
+             'driver' => 'database',
+             'table' => 'users',
+         ],
     ],
 
     /*

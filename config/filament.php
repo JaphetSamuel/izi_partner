@@ -85,7 +85,7 @@ return [
     */
 
     'auth' => [
-        'guard' => env('FILAMENT_AUTH_GUARD', 'patner'),
+        'guard' => env('FILAMENT_AUTH_GUARD', 'iziusers'),
         'pages' => [
             'login' => \Filament\Http\Livewire\Auth\Login::class,
         ],

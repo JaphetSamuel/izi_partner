@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+//    $val = DB::connection('izigo')->table('partners')->get();
+    $val = \App\Models\Partner::query()->where('id','=',9)->first();
+//    $val = DB::connection('izigo')->table('users')
+//    ->join('partners','users.id','=','partners.user_id')
+//    ->get();
+    dd($val->partner);
     return view('welcome');
 });

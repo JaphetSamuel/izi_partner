@@ -14,6 +14,8 @@ class Driver extends Model
 {
     use HasFactory;
 
+    protected $table = 'cars';
+
     /**
      * @var bool|mixed
      */
@@ -23,7 +25,7 @@ class Driver extends Model
         "firstname","lastname","phone",
         "email","password","picture", "is_enabled","car_brand",
         "car_model","immatriculation","car_licence",
-        "classification","photos","gray_card","insurance_card","patner_id", "token"
+        "classification","photos","gray_card","insurance_card","partner_id", "token"
     ];
 
     protected $casts =[
@@ -62,7 +64,6 @@ class Driver extends Model
         static::addGlobalScope(new DriverScope());
 
     }
-
 
 
 }
